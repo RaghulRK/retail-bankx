@@ -1,0 +1,32 @@
+AUTHENTICATION API:
+
+	/register
+	/validateuser
+	/getuser
+	/authorize
+	/authenticate
+	/forgotpassword
+	/forgotuserid
+	/changepassword
+	/getMenus
+	
+Accounts API:
+
+   /getAllAccounts
+   /getRecentTransactions
+   /getPromotions
+   /getTransferTypes ( DB insertion ) 
+   /saveFundTransfer
+   
+   
+Settings API:
+
+ /AddAccounts
+ /addPromotions
+ /changeMenusAccess
+ /getNotifications
+ /logout
+ 
+ Prelogin API:
+	/getBankInfo
+	

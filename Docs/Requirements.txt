@@ -1,0 +1,16 @@
+// On Launch - Login screen + company logo + brief application + prelogin(get company info)
+
+Give login with userid or CIF / Password with forgot password/forgot userid flow
+
+// Give the Registration flows
+
+	collect CIF, userid, password ( with validation ), name, phone number, PAN, DOB, Address, default make accounts for user as empty and save. ( default all menus accessible for user, later have access to disable ) 
+	
+// Login to application / validate user and fetch the data of user, navigate to dashboard ( up navbar, accounts card, promotions card, recent transactions, ) 
+// side bar menu should contain - accounts, transfer, settings
+
+// top right logout button, button to navigate profile
+
+// profile
+	- define all the user info with change password flows
+	

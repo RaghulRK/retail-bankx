@@ -1,0 +1,3 @@
+-----------THIS IS REAL TIME SIMULATION OF A RETAIL BANKING APPLICATION--------------
+----------------------IT IS USED FOR LEARNING PURPOSE-------------------------------
+-----------CONTAINS FRONTED, BACKEND, INFRA (DOCKER SETUP), CI/CD Setup-------------

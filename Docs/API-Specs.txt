@@ -26,6 +26,7 @@ Settings API:
  /changeMenusAccess
  /getNotifications
  /logout
+
  
  Prelogin API:
 	/getBankInfo

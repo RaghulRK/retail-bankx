@@ -1,0 +1,11 @@
+# env files
+.env
+.env.local
+.env.docker
+.env.prod
+
+# node
+node_modules
+
+# logs
+logs

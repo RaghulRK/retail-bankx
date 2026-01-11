@@ -1,0 +1,331 @@
+1️⃣ APPLICATION OVERVIEW (FINALIZED)
+
+Application Type: Retail Banking Web App
+Users:
+
+Customer (Retail User)
+
+Admin (Bank Ops)
+
+Access Type: Role-based + Menu-based access control
+
+2️⃣ USER JOURNEYS (CLEAR & COMPLETE)
+🔹 PRE-LOGIN JOURNEY
+
+Screen: Launch / Login
+
+Features:
+
+Bank logo
+
+Bank short description
+
+Bank contact info
+
+Login options:
+
+UserID / CIF
+
+Password
+
+Links:
+
+Forgot Password
+
+Forgot UserID
+
+API Used:
+
+GET /prelogin/getBankInfo
+
+🔹 REGISTRATION JOURNEY
+
+Inputs (Validated):
+
+CIF
+
+UserID
+
+Password (policy-based)
+
+Name
+
+Phone Number
+
+PAN
+
+DOB
+
+Address
+
+Backend Behavior:
+
+Create user
+
+Create empty accounts array
+
+Assign default menus (all enabled)
+
+Assign role = USER
+
+API:
+
+POST /auth/register
+
+🔹 LOGIN JOURNEY
+
+Flow:
+
+Validate credentials
+
+Generate JWT
+
+Fetch user profile
+
+Fetch menu access
+
+Navigate to dashboard
+
+APIs:
+
+POST /auth/authenticate
+GET  /auth/getUser
+GET  /auth/getMenus
+
+🔹 DASHBOARD (POST LOGIN)
+
+UI Sections:
+
+Top Navbar
+
+Profile
+
+Logout
+
+Sidebar
+
+Accounts
+
+Transfer
+
+Settings
+
+Main Content
+
+Accounts Cards
+
+Promotions
+
+Recent Transactions
+
+APIs Used:
+
+GET /accounts/getAllAccounts
+GET /accounts/getRecentTransactions
+GET /accounts/getPromotions
+
+🔹 PROFILE & SETTINGS
+
+Profile:
+
+View all user info
+
+Change password
+
+Settings:
+
+Menu access (admin only)
+
+Notifications
+
+APIs:
+
+POST /auth/changepassword
+GET  /settings/getNotifications
+
+🔹 ADMIN JOURNEY
+
+Default Admin User:
+
+Created at system boot
+
+Role = ADMIN
+
+Admin Capabilities:
+
+View all users
+
+View their accounts
+
+Enable/Disable menus
+
+Add promotions
+
+Add accounts manually
+
+APIs:
+
+GET  /auth/authorize
+POST /settings/changeMenusAccess
+POST /settings/addPromotions
+POST /settings/addAccounts
+
+3️⃣ MICROSERVICE BOUNDARY (VERY IMPORTANT)
+
+This is industry-grade service separation 👇
+
+✅ AUTH SERVICE
+
+Responsibilities:
+
+Registration
+
+Login
+
+JWT
+
+User identity
+
+Password management
+
+Menu access
+
+APIs:
+
+/register
+/authenticate
+/validateuser
+/authorize
+/forgotpassword
+/forgotuserid
+/changepassword
+/getMenus
+/getUser
+
+✅ ACCOUNT SERVICE
+
+Responsibilities:
+
+Accounts
+
+Transactions
+
+Transfers
+
+Promotions
+
+APIs:
+
+/getAllAccounts
+/getRecentTransactions
+/getPromotions
+/getTransferTypes
+/saveFundTransfer
+
+✅ SETTINGS SERVICE
+
+Responsibilities:
+
+Menu access changes
+
+Notifications
+
+Admin configurations
+
+APIs:
+
+/addAccounts
+/addPromotions
+/changeMenusAccess
+/getNotifications
+/logout
+
+✅ PRELOGIN SERVICE
+
+Responsibilities:
+
+Public bank info
+
+APIs:
+
+/getBankInfo
+
+
+👉 Clean separation = scalable microservices
+
+4️⃣ DATA MODEL (HIGH-LEVEL)
+🧑 USER COLLECTION
+User
+- _id
+- cif
+- userId
+- passwordHash
+- name
+- phone
+- pan
+- dob
+- address
+- role (USER | ADMIN)
+- menuAccess []
+- createdAt
+
+💳 ACCOUNT COLLECTION
+Account
+- _id
+- userId
+- accountNumber
+- accountType
+- balance
+- status
+
+🔁 TRANSACTION COLLECTION
+Transaction
+- txnId
+- fromAccount
+- toAccount
+- amount
+- type
+- status
+- createdAt
+
+🎯 PROMOTIONS COLLECTION
+Promotion
+- title
+- description
+- validTill
+- isActive
+
+5️⃣ SECURITY STANDARDS (BANKING-LIKE)
+
+Password hashing (bcrypt)
+
+JWT with expiry
+
+Role-based authorization
+
+Menu-based authorization
+
+No sensitive data in frontend
+
+Environment-based configs
+
+6️⃣ FOLDER STRUCTURE (CONFIRMED)
+retail-bankx/
+├── frontend/
+├── services/
+│   ├── auth-service
+│   ├── account-service
+│   ├── settings-service
+│   └── prelogin-service
+├── infra/
+└── docs/
+
+7️⃣ PHASE 1 DELIVERABLES (YOU CAN SAY IN INTERVIEW)
+
+✅ Requirements documented
+✅ Service boundaries defined
+✅ API contracts finalized
+✅ Data models designed
+✅ Security considered early
+
+“I followed an API-first, microservice-based design approach.”

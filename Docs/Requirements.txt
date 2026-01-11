@@ -14,3 +14,4 @@ Give login with userid or CIF / Password with forgot password/forgot userid flow
 // profile
 	- define all the user info with change password flows
 	
+// default a user will be created for admin, if he logins, he can see the list of users registered with their info with each accounts user has and logout.

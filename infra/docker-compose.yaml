@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: auth-mongo
+    ports:
+      - "27017:27017"
+
+  auth-service:
+    build: ../services/auth-service
+    ports:
+      - "2002:2002"
+    env_file:
+      - ../services/auth-service/.env.docker
+    depends_on:
+      - mongo

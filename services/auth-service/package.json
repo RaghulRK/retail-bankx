@@ -1,0 +1,25 @@
+{
+  "name": "auth-service",
+  "version": "1.0.0",
+  "description": "----AUTHENTICATION SERVICE TO IMPLEMENT----",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_ENV=local nodemon src/server.js",
+    "docker": "NODE_ENV=docker node src/server.js",
+    "prod": "NODE_ENV=production node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.2",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.11",
+    "path": "^0.12.7"
+  }
+}

@@ -319,13 +319,3 @@ retail-bankx/
 │   └── prelogin-service
 ├── infra/
 └── docs/
-
-7️⃣ PHASE 1 DELIVERABLES (YOU CAN SAY IN INTERVIEW)
-
-✅ Requirements documented
-✅ Service boundaries defined
-✅ API contracts finalized
-✅ Data models designed
-✅ Security considered early
-
-“I followed an API-first, microservice-based design approach.”
